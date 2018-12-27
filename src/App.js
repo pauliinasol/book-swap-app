@@ -15,9 +15,9 @@ class App extends Component {
         </nav>
         <header className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <p>
+          {/* <p>
             <Button>Click Here</Button>
-          </p>
+          </p> */}
         </header>
       </div>
     );

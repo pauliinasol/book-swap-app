@@ -16,10 +16,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  background-image: url("../src/books2.jpg");
-  background-size: contain;
+  background-image: url("../src/books.jpg");
   background-repeat: no-repeat;
-  background: linear-gradient(45deg, #b8b5b4);
+  background-size: 100% 100%;
 }
 
 .App-link {
