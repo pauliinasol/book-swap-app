@@ -1,25 +1,30 @@
 import React, { Component } from "react";
-import Nav from "./components/Nav.js";
-import books from "./books.jpg";
-
-import logo from "./logo.svg";
+import Nav from "./components/Nav";
+// import books from "./books.jpg";
+import IntroCard from "./components/IntroCard";
 import "./App.css";
-import { Button } from "semantic-ui-react";
+import UserPage from "./components/UserPage";
+import AboutUs from "./components/AboutUs";
+import HeaderFirst from "./components/HeaderFirst";
+import LoginForm from "./components/LoginForm";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <nav>
-          <Nav />
-        </nav>
-        <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          {/* <p>
-            <Button>Click Here</Button>
-          </p> */}
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+          <nav>
+            <Nav />
+            <Route exact path="/" component={HeaderFirst} />
+            <Route path="/loginform" component={LoginForm} />
+          </nav>
+
+          <div>
+            <UserPage />
+          </div>
+        </div>
+      </Router>
     );
   }
 }

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Menu } from "semantic-ui-react";
+import { Input, Menu } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 class Nav extends Component {
-  state = {};
+  state = { activeItem: "home" };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
@@ -10,33 +11,45 @@ class Nav extends Component {
     const { activeItem } = this.state;
 
     return (
-      <Menu>
-        <Menu.Item header className="company-name">
-          STORY CIRCLE
-        </Menu.Item>
+      <Menu
+        secondary
+        style={{
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          boxShadow: "5px 5px silver",
+          margin: "0px"
+        }}
+      >
+        <Menu.Item header>COUPLE GOALS . IO</Menu.Item>
         <Menu.Item
-          name="editorials"
-          active={activeItem === "editorials"}
+          name="home"
+          as={Link}
+          to="/"
+          active={activeItem === "home"}
           onClick={this.handleItemClick}
-        >
-          Log in
-        </Menu.Item>
-
+        />
         <Menu.Item
-          name="reviews"
-          active={activeItem === "reviews"}
+          name="what we do"
+          active={activeItem === "what we do"}
           onClick={this.handleItemClick}
-        >
-          What we do
-        </Menu.Item>
-
+        />
         <Menu.Item
-          name="upcomingEvents"
-          active={activeItem === "upcomingEvents"}
+          name="contact us"
+          active={activeItem === "contact us"}
           onClick={this.handleItemClick}
-        >
-          Contact us
-        </Menu.Item>
+        />
+        <Menu.Menu position="right">
+          <Menu.Item>
+            <Input icon="search" placeholder="Search..." />
+          </Menu.Item>
+          <Menu.Item
+            name="login"
+            as={Link}
+            to="loginform"
+            active={activeItem === "login"}
+            onClick={this.handleItemClick}
+          />
+        </Menu.Menu>
       </Menu>
     );
   }
