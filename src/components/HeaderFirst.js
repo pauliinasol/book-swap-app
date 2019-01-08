@@ -6,7 +6,7 @@ const HeaderFirst = () => (
     <header className="App-header">
       <Header
         as="h2"
-        content="Turn your household chores into game where everyone wins"
+        content="Turn your household chores into a game where everyone wins"
         inverted
         style={{
           backgroundColor: "black",

@@ -14,13 +14,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <nav>
+          <div>
             <Nav />
             <Route exact path="/" component={HeaderFirst} />
             <Route path="/loginform" component={LoginForm} />
-          </nav>
-
-          <div>
             <UserPage />
           </div>
         </div>
